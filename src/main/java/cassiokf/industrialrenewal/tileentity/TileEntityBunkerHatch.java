@@ -26,9 +26,9 @@ public class TileEntityBunkerHatch extends TileEntityMultiBlockBase<TileEntityBu
         boolean value = !state.getValue(BlockBunkerHatch.OPEN);
         changeOpenFromMaster(value);
         if (value)
-            world.playSound(null, pos, IRSoundRegister.BLOCK_CATWALKGATE_CLOSE, SoundCategory.NEUTRAL, IRConfig.MainConfig.Sounds.masterVolumeMult, 1.0F);
-        else
             world.playSound(null, pos, IRSoundRegister.BLOCK_CATWALKGATE_OPEN, SoundCategory.NEUTRAL, IRConfig.MainConfig.Sounds.masterVolumeMult, 1.0F);
+        else
+            world.playSound(null, pos, IRSoundRegister.BLOCK_CATWALKGATE_CLOSE, SoundCategory.NEUTRAL, IRConfig.MainConfig.Sounds.masterVolumeMult, 1.0F);
     }
 
     public void changeOpenFromMaster(boolean value)
