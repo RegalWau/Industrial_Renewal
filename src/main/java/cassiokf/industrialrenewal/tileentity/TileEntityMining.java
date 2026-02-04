@@ -422,7 +422,7 @@ public class TileEntityMining extends TileEntityMultiBlockBase<TileEntityMining>
     {
         if (energyContainer.getEnergyStored() <= 0) return EMPTY_ARRAY;
         List<String> texts = new ArrayList<>();
-        texts.add("Mining Drill Status: " + (running ? "Running" : TextFormatting.RED + " Stoped"));
+        texts.add("Mining Drill Status: " + (running ? "Running" : TextFormatting.RED + " Stopped"));
         texts.add("Mining Drill Mode: " + TextFormatting.BLUE + (isDeepMine ? "Deep Mine" : "Surface Mine"));
         texts.add("Vein Size: " + (depleted ? "Depleted" : size));
         texts.add("Consumption: " + (isDeepMine() ? deepEnergyPerTick : energyPerTick) + " FE/t");
