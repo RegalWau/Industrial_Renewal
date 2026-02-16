@@ -41,6 +41,7 @@ public class BlockSignalIndicator extends BlockTileEntity<TileEntitySignalIndica
         this.lightValue = 7;
     }
 
+    @Override
     public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
     {
         if (side == EnumFacing.UP)
@@ -155,6 +156,7 @@ public class BlockSignalIndicator extends BlockTileEntity<TileEntitySignalIndica
         return false;
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

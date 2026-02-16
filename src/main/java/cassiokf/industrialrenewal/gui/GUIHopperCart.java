@@ -22,6 +22,7 @@ public class GUIHopperCart extends GUIBase
         this.ySize = 114 + this.inventoryRows * 18;
     }
 
+    @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY)
     {
         String name = I18n.format(getTranslationKey() + ".name");
@@ -29,6 +30,7 @@ public class GUIHopperCart extends GUIBase
         fontRenderer.drawString(playerInv.getDisplayName().getUnformattedText(), 8, ySize - 94, 0x404040);
     }
 
+    @Override
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
     {
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);

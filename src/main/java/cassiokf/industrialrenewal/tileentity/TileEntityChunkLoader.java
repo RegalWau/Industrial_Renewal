@@ -58,7 +58,7 @@ public class TileEntityChunkLoader extends TEBase implements ITickable
         for (final WeakReference<EntityPlayer> trackedPlayerReference : trackedPlayers)
         {
             final EntityPlayer trackedPlayer = trackedPlayerReference.get();
-            if (trackedPlayer != null && player != null && player.getName() == trackedPlayer.getName())
+            if (trackedPlayer != null && player != null && player.getName().equals(trackedPlayer.getName()))
             {
                 return;
             }

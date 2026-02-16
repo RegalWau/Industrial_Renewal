@@ -91,10 +91,10 @@ public class EventHandler
         ItemStack stack;
         if (data.hasKey(deepVeinKeyItem) && data.hasKey(deepVeinKeyQuantity))
         {
-            int id = data.getInteger(deepVeinKeyItem);
+            int currentid = data.getInteger(deepVeinKeyItem);
             int count = data.getInteger(deepVeinKeyQuantity);
             if (count == 0) count = 1;
-            stack = new ItemStack(Item.getItemById(id));
+            stack = new ItemStack(Item.getItemById(currentid));
             stack.setCount(count);
         }
         else

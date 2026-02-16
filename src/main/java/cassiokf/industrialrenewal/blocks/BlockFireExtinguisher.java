@@ -74,7 +74,7 @@ public class BlockFireExtinguisher extends BlockHorizontalFacing
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        return getDefaultState().withProperty(FACING, EnumFacing.byHorizontalIndex(meta & 3)).withProperty(ONWALL, Boolean.valueOf((meta & 4) > 0));
+        return getDefaultState().withProperty(FACING, EnumFacing.byHorizontalIndex(meta & 3)).withProperty(ONWALL, (meta & 4) > 0);
     }
 
     @Override
@@ -127,6 +127,7 @@ public class BlockFireExtinguisher extends BlockHorizontalFacing
         }
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

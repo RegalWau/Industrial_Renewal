@@ -91,6 +91,7 @@ public class BlockFuseBoxConduitExtension extends BlockBase
         return false;
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

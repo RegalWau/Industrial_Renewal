@@ -172,6 +172,7 @@ public class BlockFuseBoxConnector extends BlockTileEntity<TileEntityBoxConnecto
         return false;
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

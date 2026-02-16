@@ -142,7 +142,7 @@ public class BlockIndustrialFloor extends BlockBase
     protected BlockStateContainer createBlockState()
     {
         IProperty[] listedProperties = new IProperty[]{}; // listed properties
-        IUnlistedProperty[] unlistedProperties = CONNECTED_PROPERTIES.toArray(new IUnlistedProperty[CONNECTED_PROPERTIES.size()]);
+        IUnlistedProperty[] unlistedProperties = CONNECTED_PROPERTIES.toArray(new IUnlistedProperty[0]);
         return new ExtendedBlockState(this, listedProperties, unlistedProperties);
     }
 
@@ -252,6 +252,7 @@ public class BlockIndustrialFloor extends BlockBase
     }
 
     @Deprecated
+    @Override
     public boolean isTopSolid(IBlockState state)
     {
         return true;

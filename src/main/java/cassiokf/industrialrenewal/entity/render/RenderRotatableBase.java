@@ -18,6 +18,7 @@ public abstract class RenderRotatableBase<T extends RotatableBase> extends Rende
         this.shadowSize = 0.5F;
     }
 
+    @Override
     public abstract ModelBase getModel();
 
     @Override

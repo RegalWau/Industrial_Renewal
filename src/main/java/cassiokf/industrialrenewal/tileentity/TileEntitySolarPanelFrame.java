@@ -71,7 +71,7 @@ public class TileEntitySolarPanelFrame extends TileEntityMultiBlocksTube<TileEnt
     {
         if (!this.world.isRemote)
         {
-            if (isMaster() && panelReady.size() > 0 && energyCanOutput > 0)
+            if (isMaster() && !panelReady.isEmpty() && energyCanOutput > 0)
                 energyContainer.receiveInternally(energyCanOutput, false);
 
             if (tick >= (20 + random))
@@ -187,7 +187,7 @@ public class TileEntitySolarPanelFrame extends TileEntityMultiBlocksTube<TileEnt
         {
             IBlockState state = this.world.getBlockState(this.pos);
             if (state.getBlock() instanceof BlockSolarPanelFrame)
-                blockFacing = state.getValue(BlockSolarPanelFrame.FACING);
+                blockFacing = state.getValue(BlockSolarPanelFrame.currentFACING);
             else blockFacing = EnumFacing.NORTH;
         }
         return blockFacing;

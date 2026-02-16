@@ -195,49 +195,46 @@ public class BlockElectricGate extends BlockHorizontalFacing
         boolean inverted = actualState.getValue(INVERTED);
         if (active)
         {
-            if (face == EnumFacing.NORTH)
-            {
-                if (inverted)
-                {
-                    addCollisionBoxToList(pos, entityBox, collidingBoxes, INORTH_AABB);
-                }
-                else
-                {
-                    addCollisionBoxToList(pos, entityBox, collidingBoxes, NORTH_AABB);
-                }
-            }
-            else if (face == EnumFacing.SOUTH)
-            {
-                if (inverted)
-                {
-                    addCollisionBoxToList(pos, entityBox, collidingBoxes, ISOUTH_AABB);
-                }
-                else
-                {
-                    addCollisionBoxToList(pos, entityBox, collidingBoxes, SOUTH_AABB);
-                }
-            }
-            else if (face == EnumFacing.WEST)
-            {
-                if (inverted)
-                {
-                    addCollisionBoxToList(pos, entityBox, collidingBoxes, IWEST_AABB);
-                }
-                else
-                {
-                    addCollisionBoxToList(pos, entityBox, collidingBoxes, WEST_AABB);
-                }
-            }
-            else if (face == EnumFacing.EAST)
-            {
-                if (inverted)
-                {
-                    addCollisionBoxToList(pos, entityBox, collidingBoxes, IEAST_AABB);
-                }
-                else
-                {
-                    addCollisionBoxToList(pos, entityBox, collidingBoxes, EAST_AABB);
-                }
+            if (null != face)
+            switch (face) {
+                case NORTH:
+                    if (inverted)
+                    {
+                        addCollisionBoxToList(pos, entityBox, collidingBoxes, INORTH_AABB);
+                    }
+                    else
+                    {
+                        addCollisionBoxToList(pos, entityBox, collidingBoxes, NORTH_AABB);
+                    }   break;
+                case SOUTH:
+                    if (inverted)
+                    {
+                        addCollisionBoxToList(pos, entityBox, collidingBoxes, ISOUTH_AABB);
+                    }
+                    else
+                    {
+                        addCollisionBoxToList(pos, entityBox, collidingBoxes, SOUTH_AABB);
+                    }   break;
+                case WEST:
+                    if (inverted)
+                    {
+                        addCollisionBoxToList(pos, entityBox, collidingBoxes, IWEST_AABB);
+                    }
+                    else
+                    {
+                        addCollisionBoxToList(pos, entityBox, collidingBoxes, WEST_AABB);
+                    }   break;
+                case EAST:
+                    if (inverted)
+                    {
+                        addCollisionBoxToList(pos, entityBox, collidingBoxes, IEAST_AABB);
+                    }
+                    else
+                    {
+                        addCollisionBoxToList(pos, entityBox, collidingBoxes, EAST_AABB);
+                    }   break;
+                default:
+                    break;
             }
         }
         else
@@ -284,6 +281,7 @@ public class BlockElectricGate extends BlockHorizontalFacing
         return getDefaultState().withProperty(FACING, placer.getHorizontalFacing()).withProperty(ACTIVE, false);
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

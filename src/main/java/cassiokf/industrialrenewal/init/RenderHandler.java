@@ -1,8 +1,22 @@
 package cassiokf.industrialrenewal.init;
 
 import cassiokf.industrialrenewal.References;
-import cassiokf.industrialrenewal.entity.*;
-import cassiokf.industrialrenewal.entity.render.*;
+import cassiokf.industrialrenewal.entity.EntityCargoContainer;
+import cassiokf.industrialrenewal.entity.EntityFlatCart;
+import cassiokf.industrialrenewal.entity.EntityFluidContainer;
+import cassiokf.industrialrenewal.entity.EntityHopperCart;
+import cassiokf.industrialrenewal.entity.EntityLogCart;
+import cassiokf.industrialrenewal.entity.EntityPassengerCar;
+import cassiokf.industrialrenewal.entity.EntitySteamLocomotive;
+import cassiokf.industrialrenewal.entity.EntityTenderBase;
+import cassiokf.industrialrenewal.entity.render.RenderCargoContainer;
+import cassiokf.industrialrenewal.entity.render.RenderFlatCart;
+import cassiokf.industrialrenewal.entity.render.RenderFluidContainer;
+import cassiokf.industrialrenewal.entity.render.RenderHopperCart;
+import cassiokf.industrialrenewal.entity.render.RenderLogCart;
+import cassiokf.industrialrenewal.entity.render.RenderPassengerCar;
+import cassiokf.industrialrenewal.entity.render.RenderSteamLocomotive;
+import cassiokf.industrialrenewal.entity.render.RenderTender;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;

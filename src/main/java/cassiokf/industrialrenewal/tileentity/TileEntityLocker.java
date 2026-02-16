@@ -22,6 +22,7 @@ public class TileEntityLocker extends TileEntityLockableLoot {
         return (oldState.getBlock() != newState.getBlock());
     }
 
+    @Override
     public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
         this.chestContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
@@ -35,6 +36,7 @@ public class TileEntityLocker extends TileEntityLockableLoot {
         }
     }
 
+    @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
 

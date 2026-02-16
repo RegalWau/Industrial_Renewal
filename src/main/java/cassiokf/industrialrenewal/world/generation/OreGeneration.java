@@ -73,7 +73,7 @@ public class OreGeneration implements IWorldGenerator
 
     public static ItemStack generateNewVein(World world)
     {
-        if (!IRConfig.MainConfig.Generation.spawnDeepVein || DEEP_VEIN_ORES.size() <= 0) return ItemStack.EMPTY;
+        if (!IRConfig.MainConfig.Generation.spawnDeepVein || DEEP_VEIN_ORES.isEmpty()) return ItemStack.EMPTY;
         int chance = IRConfig.MainConfig.Generation.deepVeinSpawnRate;
         if (world.rand.nextInt(100) < chance)
         {
@@ -91,7 +91,7 @@ public class OreGeneration implements IWorldGenerator
     {
         int min = IRConfig.MainConfig.Generation.deepVeinMinOre;
         int oreQuantity = world.rand.nextInt(IRConfig.MainConfig.Generation.deepVeinMaxOre - min) + min;
-        Item item = DEEP_VEIN_ORES.get(world.rand.nextInt(DEEP_VEIN_ORES.size() - 1));
+        Item item = DEEP_VEIN_ORES.get(world.rand.nextInt(DEEP_VEIN_ORES.size()));
         Block block = Block.getBlockFromItem(item);
         ItemStack stack = new ItemStack(block.getItemDropped(block.getDefaultState(), world.rand, 0), 1, block.damageDropped(block.getDefaultState()));
         stack.setCount(oreQuantity);

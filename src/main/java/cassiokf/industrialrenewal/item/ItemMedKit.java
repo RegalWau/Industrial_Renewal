@@ -37,7 +37,7 @@ public class ItemMedKit extends ItemBase
             }
             itemstack.shrink(1);
         }
-        return new ActionResult<ItemStack>(EnumActionResult.PASS, player.getHeldItem(hand));
+        return new ActionResult<>(EnumActionResult.PASS, player.getHeldItem(hand));
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.Map;
 public class TileEntityHighPressurePipe extends TileEntityMultiBlocksTube<TileEntityHighPressurePipe> implements ICompressedFluidCapability
 {
     public int maxOutput = Fluid.BUCKET_VOLUME;
-    private boolean inUse = false;
+    private boolean currentinUse = false;
 
     @Override
     public void tick()
@@ -38,8 +38,8 @@ public class TileEntityHighPressurePipe extends TileEntityMultiBlocksTube<TileEn
     public int passCompressedFluid(int amount, int y, boolean simulate)
     {
         if (!isMaster() && !isMasterInvalid()) return getMaster().passCompressedFluid(amount, y, simulate);
-        if (inUse) return 0; //to prevent stack overflow (IE)
-        inUse = true;
+        if (currentinUse) return 0; //to prevent stack overflow (IE)
+        currentinUse = true;
 
         if (amount <= 0) return 0;
         int out = 0;
@@ -53,7 +53,7 @@ public class TileEntityHighPressurePipe extends TileEntityMultiBlocksTube<TileEn
         }
         outPutCount = quantity;
 
-        inUse = false;
+        currentinUse = false;
         return out;
     }
 

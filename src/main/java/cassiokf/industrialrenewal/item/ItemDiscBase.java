@@ -50,7 +50,7 @@ public class ItemDiscBase extends ItemRecord
     }
 
     @Override
-    public ItemDiscBase setCreativeTab(CreativeTabs tab)
+    public final ItemDiscBase setCreativeTab(CreativeTabs tab)
     {
         super.setCreativeTab(tab);
         return this;

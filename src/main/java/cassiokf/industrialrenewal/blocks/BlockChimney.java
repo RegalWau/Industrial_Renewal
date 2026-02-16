@@ -28,6 +28,10 @@ public class BlockChimney extends BlockBase
 
     /**
      * todo Arrumar para não ser mais random
+     * @param state
+     * @param world
+     * @param pos
+     * @param random
      **/
     @Override
     public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random random)

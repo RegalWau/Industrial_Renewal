@@ -65,6 +65,7 @@ public class BlockTrafficLight extends BlockTileEntity<TileEntityTrafficLight>
         return state.withProperty(SIGNAL, getSignal(world, pos));
     }
 
+    @Override
     public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
     {
         if (side == EnumFacing.UP)
@@ -108,6 +109,7 @@ public class BlockTrafficLight extends BlockTileEntity<TileEntityTrafficLight>
     }
 
     @SideOnly(Side.CLIENT)
+    @Override
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, ITooltipFlag advanced)
     {
         tooltip.add(I18n.format("tile.industrialrenewal.traffic_light.des0"));
@@ -155,6 +157,7 @@ public class BlockTrafficLight extends BlockTileEntity<TileEntityTrafficLight>
         return false;
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

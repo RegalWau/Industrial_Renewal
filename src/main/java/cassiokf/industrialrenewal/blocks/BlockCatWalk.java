@@ -11,7 +11,11 @@ import cassiokf.industrialrenewal.init.ModItems;
 import cassiokf.industrialrenewal.item.ItemPowerScrewDrive;
 import cassiokf.industrialrenewal.tileentity.TileEntityCatWalk;
 import com.google.common.collect.ImmutableList;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockDoor;
+import net.minecraft.block.BlockLadder;
+import net.minecraft.block.BlockStairs;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -58,7 +62,7 @@ public class BlockCatWalk extends BlockTileEntity<TileEntityCatWalk>
     @Override
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, CONNECTED_PROPERTIES.toArray(new IProperty[CONNECTED_PROPERTIES.size()]));
+        return new BlockStateContainer(this, CONNECTED_PROPERTIES.toArray(new IProperty[0]));
     }
 
     @Override

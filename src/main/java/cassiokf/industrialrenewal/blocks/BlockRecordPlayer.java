@@ -105,6 +105,7 @@ public class BlockRecordPlayer extends BlockHorizontalFacing
         return BlockRenderLayer.CUTOUT;
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         if (face == EnumFacing.DOWN) return BlockFaceShape.SOLID;

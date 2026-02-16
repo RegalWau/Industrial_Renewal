@@ -15,7 +15,7 @@ public abstract class TileEntityEnergyCableGauge extends TileEntityEnergyCable
         if (facing != null) return facing;
         IBlockState state = world.getBlockState(pos);
         facing = state.getBlock() instanceof BlockEnergyCableGauge
-                ? state.getValue(BlockEnergyCableGauge.FACING) : EnumFacing.NORTH;
+                ? state.getValue(BlockEnergyCableGauge.currentFACING) : EnumFacing.NORTH;
         return facing;
     }
 

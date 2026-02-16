@@ -12,7 +12,12 @@ import cassiokf.industrialrenewal.blocks.redstone.BlockAlarm;
 import cassiokf.industrialrenewal.init.ModBlocks;
 import cassiokf.industrialrenewal.util.enums.enumproperty.EnumBaseDirection;
 import com.google.common.collect.ImmutableList;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockLadder;
+import net.minecraft.block.BlockLever;
+import net.minecraft.block.BlockRedstoneTorch;
+import net.minecraft.block.BlockTripWireHook;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -107,7 +112,7 @@ public class BlockPillar extends BlockBase
     @Override
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, CONNECTED_PROPERTIES.toArray(new IProperty[CONNECTED_PROPERTIES.size()]));
+        return new BlockStateContainer(this, CONNECTED_PROPERTIES.toArray(new IProperty[0]));
     }
 
     @SuppressWarnings("deprecation")

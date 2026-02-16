@@ -33,7 +33,7 @@ import javax.annotation.Nullable;
 
 public class BlockEnergyCableGauge extends BlockEnergyCable
 {
-    public static final PropertyDirection FACING = BlockHorizontal.FACING;
+    public static final PropertyDirection currentFACING = BlockHorizontal.FACING;
 
     public BlockEnergyCableGauge(EnumEnergyCableType type, String name, CreativeTabs tab)
     {
@@ -44,7 +44,7 @@ public class BlockEnergyCableGauge extends BlockEnergyCable
     @Override
     protected BlockStateContainer createBlockState()
     {
-        IProperty[] listedProperties = new IProperty[]{FACING}; // listed properties
+        IProperty[] listedProperties = new IProperty[]{currentFACING}; // listed properties
         IUnlistedProperty[] unlistedProperties = new IUnlistedProperty[]{MASTER, SOUTH, NORTH, EAST, WEST, UP, DOWN, CSOUTH, CNORTH, CEAST, CWEST, CUP, CDOWN};
         return new ExtendedBlockState(this, listedProperties, unlistedProperties);
     }
@@ -54,7 +54,7 @@ public class BlockEnergyCableGauge extends BlockEnergyCable
     {
         if (state instanceof IExtendedBlockState)
         {
-            EnumFacing facing = state.getValue(FACING);
+            EnumFacing facing = state.getValue(currentFACING);
             IExtendedBlockState eState = (IExtendedBlockState) state;
             return eState.withProperty(MASTER, isMaster(world, pos))
                     .withProperty(SOUTH, canConnectToPipe(world, pos, facing.getOpposite())).withProperty(NORTH, canConnectToPipe(world, pos, facing))
@@ -126,13 +126,13 @@ public class BlockEnergyCableGauge extends BlockEnergyCable
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        return getDefaultState().withProperty(FACING, EnumFacing.byHorizontalIndex(meta));
+        return getDefaultState().withProperty(currentFACING, EnumFacing.byHorizontalIndex(meta));
     }
 
     @Override
     public int getMetaFromState(IBlockState state)
     {
-        return state.getValue(FACING).getHorizontalIndex();
+        return state.getValue(currentFACING).getHorizontalIndex();
     }
 
     @Override

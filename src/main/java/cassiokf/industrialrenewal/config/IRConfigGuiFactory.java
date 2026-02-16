@@ -48,7 +48,7 @@ public class IRConfigGuiFactory implements IModGuiFactory
 
         private static List<IConfigElement> getConfigElements()
         {
-            List<IConfigElement> list = new ArrayList<IConfigElement>();
+            List<IConfigElement> list = new ArrayList<>();
             //list.add(new DummyCategoryElement(I18n.format("gui.config.category.options"), "gui.config.category.options", CategoryEntryOptions.class));
             //list.add(new DummyCategoryElement(I18n.format("gui.config.category.recipes"), "gui.config.category.recipes", CategoryEntryRecipes.class));
             return list;

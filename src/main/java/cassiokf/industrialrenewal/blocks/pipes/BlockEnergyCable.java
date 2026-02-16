@@ -142,7 +142,7 @@ public class BlockEnergyCable extends BlockPipeBase<TileEntityEnergyCable>
                         block = ModBlocks.energyCableGaugeHV;
                         break;
                 }
-                world.setBlockState(pos, block.getDefaultState().withProperty(BlockEnergyCableGauge.FACING, entity.getHorizontalFacing()), 3);
+                world.setBlockState(pos, block.getDefaultState().withProperty(BlockEnergyCableGauge.currentFACING, entity.getHorizontalFacing()), 3);
                 if (!entity.isCreative())
                 {
                     playerStack.shrink(1);

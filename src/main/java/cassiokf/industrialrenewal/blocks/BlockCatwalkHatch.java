@@ -126,21 +126,22 @@ public class BlockCatwalkHatch extends BlockHorizontalFacing
         if (active)
         {
             EnumFacing face = state.getValue(FACING);
-            if (face == EnumFacing.NORTH)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, OPEN_NORTH_AABB);
-            }
-            else if (face == EnumFacing.SOUTH)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, OPEN_SOUTH_AABB);
-            }
-            else if (face == EnumFacing.WEST)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, OPEN_WEST_AABB);
-            }
-            else if (face == EnumFacing.EAST)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, OPEN_EAST_AABB);
+            if (null != face)
+            switch (face) {
+                case NORTH:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, OPEN_NORTH_AABB);
+                    break;
+                case SOUTH:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, OPEN_SOUTH_AABB);
+                    break;
+                case WEST:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, OPEN_WEST_AABB);
+                    break;
+                case EAST:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, OPEN_EAST_AABB);
+                    break;
+                default:
+                    break;
             }
         }
         else
@@ -179,6 +180,7 @@ public class BlockCatwalkHatch extends BlockHorizontalFacing
         return getDefaultState().withProperty(FACING, placer.getHorizontalFacing()).withProperty(ACTIVE, false);
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

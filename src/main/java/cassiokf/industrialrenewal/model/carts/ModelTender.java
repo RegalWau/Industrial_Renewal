@@ -120,7 +120,7 @@ public class ModelTender extends ModelBase
         bb_main.render(f5);
     }
 
-    public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z)
+    public final void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z)
     {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

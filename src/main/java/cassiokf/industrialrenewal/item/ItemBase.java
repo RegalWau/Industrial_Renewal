@@ -25,7 +25,7 @@ public class ItemBase extends Item
     }
 
     @Override
-    public ItemBase setCreativeTab(CreativeTabs tab)
+    public final ItemBase setCreativeTab(CreativeTabs tab)
     {
         super.setCreativeTab(tab);
         return this;

@@ -100,6 +100,7 @@ public class BlockFloorLamp extends BlockIndustrialFloor
     }
 
     @Deprecated
+    @Override
     public boolean isTopSolid(IBlockState state)
     {
         return true;

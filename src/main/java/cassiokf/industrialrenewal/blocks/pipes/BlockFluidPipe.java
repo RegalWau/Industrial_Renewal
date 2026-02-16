@@ -80,7 +80,7 @@ public class BlockFluidPipe extends BlockPipeBase<TileEntityFluidPipe>
             if (!world.isRemote)
             {
                 world.playSound(null, pos, SoundEvents.BLOCK_METAL_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
-                world.setBlockState(pos, ModBlocks.fluidPipeGauge.getDefaultState().withProperty(BlockFluidPipeGauge.FACING, entity.getHorizontalFacing()), 3);
+                world.setBlockState(pos, ModBlocks.fluidPipeGauge.getDefaultState().withProperty(BlockFluidPipeGauge.currentFACING, entity.getHorizontalFacing()), 3);
                 if (!entity.isCreative())
                 {
                     entity.getHeldItem(EnumHand.MAIN_HAND).shrink(1);

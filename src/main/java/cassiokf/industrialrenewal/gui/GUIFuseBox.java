@@ -59,7 +59,7 @@ public class GUIFuseBox extends GUIBase
 
         if (isPointInRegion(16, 25, 144, 36, mouseX, mouseY))
         {
-            List<String> text = new ArrayList<String>();
+            List<String> text = new ArrayList<>();
             text.add(TextFormatting.GRAY + I18n.format("gui.industrialrenewal.fusebox.slots.tooltip"));
             this.drawHoveringText(text, actualMouseX, actualMouseY);
         }

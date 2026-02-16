@@ -2,7 +2,13 @@ package cassiokf.industrialrenewal.init;
 
 import cassiokf.industrialrenewal.IndustrialRenewal;
 import cassiokf.industrialrenewal.References;
-import cassiokf.industrialrenewal.network.*;
+import cassiokf.industrialrenewal.network.PacketReturnCargoLoader;
+import cassiokf.industrialrenewal.network.PacketReturnEntityDetector;
+import cassiokf.industrialrenewal.network.PacketReturnFluidLoader;
+import cassiokf.industrialrenewal.network.PacketReturnFuseBox;
+import cassiokf.industrialrenewal.network.PacketReturnRecordPlayer;
+import cassiokf.industrialrenewal.network.PacketReturnTEStorageChest;
+import cassiokf.industrialrenewal.network.PacketStorageChest;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;

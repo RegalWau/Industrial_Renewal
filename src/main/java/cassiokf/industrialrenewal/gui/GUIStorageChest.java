@@ -67,8 +67,8 @@ public class GUIStorageChest extends GUIBase
         this.buttonList.add(downB);
 
         Keyboard.enableRepeatEvents(true);
-        FontRenderer fontRenderer = mc.fontRenderer;
-        searchField = new GuiTextField(0, fontRenderer, this.guiLeft + 138, this.guiTop + 5, 80, fontRenderer.FONT_HEIGHT);
+        FontRenderer currentfontRenderer = mc.fontRenderer;
+        searchField = new GuiTextField(0, currentfontRenderer, this.guiLeft + 138, this.guiTop + 5, 80, currentfontRenderer.FONT_HEIGHT);
         searchField.setText(te.search);
         searchField.setMaxStringLength(50);
         searchField.setEnableBackgroundDrawing(false);
@@ -177,7 +177,7 @@ public class GUIStorageChest extends GUIBase
         {
             return true;
         }
-        ArrayList<String> keys = new ArrayList<String>();
+        ArrayList<String> keys = new ArrayList<>();
         for (String line : stack.getTooltip(mc.player,
                 mc.gameSettings.advancedItemTooltips ? ITooltipFlag.TooltipFlags.ADVANCED : ITooltipFlag.TooltipFlags.NORMAL))
         {

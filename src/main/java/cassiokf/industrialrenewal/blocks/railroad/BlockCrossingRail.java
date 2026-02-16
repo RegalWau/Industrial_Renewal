@@ -44,6 +44,7 @@ public class BlockCrossingRail extends BlockNormalRailBase
     }
 
     @SideOnly(Side.CLIENT)
+    @Override
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, ITooltipFlag advanced)
     {
         tooltip.add(I18n.format("tile.industrialrenewal.crossing_rail.info"));

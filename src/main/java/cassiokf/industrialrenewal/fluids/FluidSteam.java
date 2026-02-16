@@ -3,7 +3,7 @@ package cassiokf.industrialrenewal.fluids;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class FluidSteam extends Fluid
 {

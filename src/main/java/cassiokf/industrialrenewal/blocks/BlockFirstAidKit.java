@@ -126,6 +126,7 @@ public class BlockFirstAidKit extends BlockHorizontalFacing
         super.breakBlock(world, pos, state);
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

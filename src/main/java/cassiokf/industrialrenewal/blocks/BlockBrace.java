@@ -34,11 +34,13 @@ public class BlockBrace extends BlockBase
         return new BlockStateContainer(this, FACING);
     }
 
+    @Override
     public IBlockState getStateFromMeta(int meta)
     {
         return this.getDefaultState().withProperty(FACING, BlockBrace.EnumOrientation.byMetadata(meta & 7));
     }
 
+    @Override
     public int getMetaFromState(IBlockState state)
     {
         int i = 0;
@@ -169,11 +171,13 @@ public class BlockBrace extends BlockBase
             return this.facing;
         }
 
+        @Override
         public String toString()
         {
             return this.name;
         }
 
+        @Override
         public String getName()
         {
             return this.name;

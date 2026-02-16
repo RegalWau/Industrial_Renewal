@@ -25,7 +25,7 @@ public class BlockRailGate extends BlockNormalRailBase
     public static final PropertyBool OPEN = PropertyBool.create("open");
     protected static final AxisAlignedBB CNORTH_AABB = new AxisAlignedBB(-0.25D, 0.0D, 0.375D, 1.25D, 2D, 0.625D);
     protected static final AxisAlignedBB CWEST_AABB = new AxisAlignedBB(0.375D, 0.0D, -0.25D, 0.625D, 2D, 1.25D);
-    protected String name;
+    protected String currentname;
 
     public BlockRailGate(String name, CreativeTabs tab)
     {

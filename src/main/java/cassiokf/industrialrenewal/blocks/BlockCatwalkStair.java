@@ -160,57 +160,50 @@ public class BlockCatwalkStair extends BlockHorizontalFacing
         EnumFacing face = actualState.getValue(FACING);
         Boolean left = actualState.getValue(ACTIVE_LEFT);
         Boolean right = actualState.getValue(ACTIVE_RIGHT);
-        if (face == EnumFacing.NORTH)
-        {
-            addCollisionBoxToList(pos, entityBox, collidingBoxes, NORTH_AABB);
-            if (left)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, WC_AABB);
-            }
-            if (right)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, EC_AABB);
-            }
-
-        }
-        else if (face == EnumFacing.SOUTH)
-        {
-            addCollisionBoxToList(pos, entityBox, collidingBoxes, SOUTH_AABB);
-            if (left)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, EC_AABB);
-            }
-            if (right)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, WC_AABB);
-            }
-        }
-        else if (face == EnumFacing.WEST)
-        {
-            addCollisionBoxToList(pos, entityBox, collidingBoxes, WEST_AABB);
-            if (left)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, SC_AABB);
-            }
-            if (right)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, NC_AABB);
-            }
-        }
-        else if (face == EnumFacing.EAST)
-        {
-            addCollisionBoxToList(pos, entityBox, collidingBoxes, EAST_AABB);
-            if (left)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, NC_AABB);
-            }
-            if (right)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, SC_AABB);
-            }
+        if (null != face)
+        switch (face) {
+            case NORTH:
+                addCollisionBoxToList(pos, entityBox, collidingBoxes, NORTH_AABB);
+                if (left)
+                {
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, WC_AABB);
+                }   if (right)
+                {
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, EC_AABB);
+                }   break;
+            case SOUTH:
+                addCollisionBoxToList(pos, entityBox, collidingBoxes, SOUTH_AABB);
+                if (left)
+                {
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, EC_AABB);
+                }   if (right)
+                {
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, WC_AABB);
+                }   break;
+            case WEST:
+                addCollisionBoxToList(pos, entityBox, collidingBoxes, WEST_AABB);
+                if (left)
+                {
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, SC_AABB);
+                }   if (right)
+                {
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, NC_AABB);
+                }   break;
+            case EAST:
+                addCollisionBoxToList(pos, entityBox, collidingBoxes, EAST_AABB);
+                if (left)
+                {
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, NC_AABB);
+                }   if (right)
+                {
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, SC_AABB);
+                }   break;
+            default:
+                break;
         }
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

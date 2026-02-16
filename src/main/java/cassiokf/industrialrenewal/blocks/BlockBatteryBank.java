@@ -87,6 +87,7 @@ public class BlockBatteryBank extends BlockTileEntityConnected<TileEntityBattery
         return BlockRenderLayer.CUTOUT;
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

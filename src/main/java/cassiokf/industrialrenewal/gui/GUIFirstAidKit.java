@@ -37,7 +37,7 @@ public class GUIFirstAidKit extends GUIBase
 
         if (isPointInRegion(53, 29, 70, 34, mouseX, mouseY))
         {
-            List<String> text = new ArrayList<String>();
+            List<String> text = new ArrayList<>();
             text.add(TextFormatting.GRAY + I18n.format("gui.industrialrenewal.blockfirstaidkit.bandages.tooltip"));
             this.drawHoveringText(text, actualMouseX, actualMouseY);
         }

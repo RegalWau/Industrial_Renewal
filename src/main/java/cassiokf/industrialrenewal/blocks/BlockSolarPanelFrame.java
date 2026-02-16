@@ -29,7 +29,7 @@ import java.util.List;
 
 public class BlockSolarPanelFrame extends BlockTileEntityConnectedMultiblocks<TileEntitySolarPanelFrame>
 {
-    public static final PropertyDirection FACING = BlockHorizontalFacing.FACING;
+    public static final PropertyDirection currentFACING = BlockHorizontalFacing.FACING;
 
     public BlockSolarPanelFrame(String name, CreativeTabs tab)
     {
@@ -85,13 +85,13 @@ public class BlockSolarPanelFrame extends BlockTileEntityConnectedMultiblocks<Ti
     @Override
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
-        return getDefaultState().withProperty(FACING, placer.isSneaking() ? placer.getHorizontalFacing().getOpposite() : placer.getHorizontalFacing());
+        return getDefaultState().withProperty(currentFACING, placer.isSneaking() ? placer.getHorizontalFacing().getOpposite() : placer.getHorizontalFacing());
     }
 
     @Override
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, FACING);
+        return new BlockStateContainer(this, currentFACING);
     }
 
     @Nullable

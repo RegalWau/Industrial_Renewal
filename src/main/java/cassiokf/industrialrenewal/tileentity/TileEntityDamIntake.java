@@ -71,7 +71,7 @@ public class TileEntityDamIntake extends TEHorizontalDirection implements ITicka
         initializeMultiblockIfNecessary(true);
         int percentage = waterAmount / 10;
         boolean done = false;
-        if (percentage < 100 && failWaters.size() > 0 && player.getHeldItemMainhand().getItem() == Items.WATER_BUCKET)
+        if (percentage < 100 && !failWaters.isEmpty() && player.getHeldItemMainhand().getItem() == Items.WATER_BUCKET)
         {
             if (tryFillDam(player)) done = true;
         }

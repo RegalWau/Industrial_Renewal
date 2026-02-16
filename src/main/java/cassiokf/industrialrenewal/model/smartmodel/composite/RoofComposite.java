@@ -49,7 +49,7 @@ public class RoofComposite implements IBakedModel
     @Override
     public List<BakedQuad> getQuads(@Nullable IBlockState blockState, @Nullable EnumFacing side, long rand)
     {
-        List<BakedQuad> quadsList = new LinkedList<BakedQuad>();
+        List<BakedQuad> quadsList = new LinkedList<>();
         quadsList.addAll(modelCore.getQuads(blockState, side, rand));
         if (!(blockState instanceof IExtendedBlockState))
         {

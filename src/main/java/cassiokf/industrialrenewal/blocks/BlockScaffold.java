@@ -122,7 +122,7 @@ public class BlockScaffold extends BlockBase
     @Override
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, CONNECTED_PROPERTIES.toArray(new IProperty[CONNECTED_PROPERTIES.size()]));
+        return new BlockStateContainer(this, CONNECTED_PROPERTIES.toArray(new IProperty[0]));
     }
 
     /**
@@ -185,6 +185,7 @@ public class BlockScaffold extends BlockBase
         return state.getValue(CONNECTED_PROPERTIES.get(facing.getIndex()));
     }
 
+    @Override
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
         return worldIn.getBlockState(pos.down()).isSideSolid(worldIn, pos.down(), EnumFacing.UP);
@@ -219,6 +220,7 @@ public class BlockScaffold extends BlockBase
 
     @Deprecated
 
+    @Override
     public boolean isTopSolid(IBlockState state)
     {
         return true;

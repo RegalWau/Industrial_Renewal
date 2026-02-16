@@ -37,7 +37,7 @@ public class GUISteamLocomotive extends GUIBase
 
         if (isPointInRegion(44, 52, 16, 16, mouseX, mouseY))
         {
-            List<String> text = new ArrayList<String>();
+            List<String> text = new ArrayList<>();
             text.add(TextFormatting.GRAY + I18n.format("gui.industrialrenewal.entity_steamlocomotive.plow.tooltip"));
             this.drawHoveringText(text, actualMouseX, actualMouseY);
         }

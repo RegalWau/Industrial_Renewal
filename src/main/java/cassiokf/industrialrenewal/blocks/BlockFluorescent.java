@@ -43,7 +43,7 @@ public class BlockFluorescent extends BlockBase
     @Override
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, CONNECTED_PROPERTIES.toArray(new IProperty[CONNECTED_PROPERTIES.size()]));
+        return new BlockStateContainer(this, CONNECTED_PROPERTIES.toArray(new IProperty[0]));
     }
 
     @SuppressWarnings("deprecation")

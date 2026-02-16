@@ -20,6 +20,7 @@ public class ItemBookManual extends ItemBase
         super(name, tab);
     }
 
+    @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {
         OpenGUI(worldIn, playerIn.getPosition(), playerIn);

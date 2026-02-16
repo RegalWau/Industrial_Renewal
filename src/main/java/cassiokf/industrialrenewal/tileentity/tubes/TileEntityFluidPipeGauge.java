@@ -15,7 +15,7 @@ public class TileEntityFluidPipeGauge extends TileEntityFluidPipe
         if (facing != null) return facing;
         IBlockState state = world.getBlockState(pos);
         facing = state.getBlock() instanceof BlockFluidPipeGauge
-                ? state.getValue(BlockFluidPipeGauge.FACING) : EnumFacing.NORTH;
+                ? state.getValue(BlockFluidPipeGauge.currentFACING) : EnumFacing.NORTH;
         return facing;
     }
 

@@ -48,7 +48,7 @@ public class BlockSignBase extends BlockHorizontalFacing
     {
         super(name, tab, Material.IRON);
 
-        signs.add(this);
+        boolean add = signs.add(this);
 
         setSoundType(SoundType.METAL);
         setHardness(0.8f);

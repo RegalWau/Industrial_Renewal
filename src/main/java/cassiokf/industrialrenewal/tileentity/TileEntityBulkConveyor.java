@@ -105,21 +105,24 @@ public class TileEntityBulkConveyor extends TileEntitySync implements ITickable
 
     public void itemReceived(int slot)
     {
-        if (slot == frontNumber)
-        {
-            frontTick = 0;
-            oldFrontTick = 0;
-            rFrontTick = 0;
-        } else if (slot == middleNumber)
-        {
-            middleTick = 0;
-            oldMiddleTick = 0;
-            rMiddleTick = 0;
-        } else if (slot == backNumber)
-        {
-            backTick = 0;
-            oldBackTick = 0;
-            rMiddleTick = 0;
+        switch (slot) {
+            case frontNumber:
+                frontTick = 0;
+                oldFrontTick = 0;
+                rFrontTick = 0;
+                break;
+            case middleNumber:
+                middleTick = 0;
+                oldMiddleTick = 0;
+                rMiddleTick = 0;
+                break;
+            case backNumber:
+                backTick = 0;
+                oldBackTick = 0;
+                rBackTick = 0;
+                break;
+            default:
+                break;
         }
         sync();
     }
@@ -130,13 +133,13 @@ public class TileEntityBulkConveyor extends TileEntitySync implements ITickable
         ItemStack frontPositionItem = inventory.getStackInSlot(frontNumber);
         IBlockState ownState = world.getBlockState(pos);
         if (!(ownState.getBlock() instanceof BlockBulkConveyor)) return false;
-
-        EnumFacing facing = getBlockFacing();
+        // Change it so that it only checks getBlockFacing() once
+        EnumFacing currentFacing = getBlockFacing();
         if (!frontPositionItem.isEmpty())
         {
-            BlockPos frontPos = pos.offset(facing);
+            BlockPos frontPos = pos.offset(currentFacing);
             int mode = ownState.getActualState(world, pos).getValue(BlockBulkConveyor.MODE);
-            BlockPos targetConveyorPos = frontConveyor(facing, mode);
+            BlockPos targetConveyorPos = frontConveyor(currentFacing, mode);
             if (targetConveyorPos != null)
             {
                 TileEntity tileEntity = world.getTileEntity(targetConveyorPos);
@@ -158,7 +161,7 @@ public class TileEntityBulkConveyor extends TileEntitySync implements ITickable
                 }
             } else if (world.getBlockState(frontPos).getMaterial() == Material.AIR)
             {
-                dropFrontItem(facing, frontPositionItem, frontPos);
+                dropFrontItem(currentFacing, frontPositionItem, frontPos);
                 return true;
             }
         }

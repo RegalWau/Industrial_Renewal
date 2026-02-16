@@ -23,7 +23,7 @@ public class TileEntityFluidPipe extends TileEntityMultiBlocksTube<TileEntityFlu
     public int maxOutput = IRConfig.MainConfig.Main.maxFluidPipeTransferAmount;
     private int oldFluid;
     private int tick;
-    private boolean inUse = false;
+    private boolean currentinUse = false;
     public FluidTank tank = new FluidTank(Fluid.BUCKET_VOLUME)
     {
         @Override
@@ -57,17 +57,17 @@ public class TileEntityFluidPipe extends TileEntityMultiBlocksTube<TileEntityFlu
     {
         if (!isMaster() && !isMasterInvalid()) return getMaster().onFluidReceived(resource, doFill);
 
-        if (inUse) return 0; //to prevent stack overflow (IE)
-        inUse = true;
+        if (currentinUse) return 0; //to prevent stack overflow (IE)
+        currentinUse = true;
         if (resource == null || resource.amount <= 0)
         {
-            inUse = false;
+            currentinUse = false;
             return 0;
         }
         List<Integer> out = MultiBlockHelper.outputFluid(this, resource, maxOutput, doFill, world);
         if (doFill) outPut += out.get(0);
         outPutCount = out.get(1);
-        inUse = false;
+        currentinUse = false;
         return out.get(0);
     }
 

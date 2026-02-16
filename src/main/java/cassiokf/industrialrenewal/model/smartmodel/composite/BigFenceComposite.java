@@ -51,7 +51,7 @@ public class BigFenceComposite implements IBakedModel
     @Override
     public List<BakedQuad> getQuads(@Nullable IBlockState blockState, @Nullable EnumFacing side, long rand)
     {
-        List<BakedQuad> quadsList = new LinkedList<BakedQuad>();
+        List<BakedQuad> quadsList = new LinkedList<>();
         if (!(blockState instanceof IExtendedBlockState))
         {
             return quadsList;

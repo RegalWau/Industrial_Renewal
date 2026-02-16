@@ -10,7 +10,7 @@ public class MachinesUtils
 {
     public static List<BlockPos> getBlocksIn3x3x3Centered(BlockPos pos)
     {
-        List<BlockPos> list = new ArrayList<BlockPos>();
+        List<BlockPos> list = new ArrayList<>();
         for (int y = -1; y < 2; y++)
         {
             for (int z = -1; z < 2; z++)
@@ -46,7 +46,7 @@ public class MachinesUtils
 
     public static List<BlockPos> getBlocksIn3x2x3CenteredPlus1OnTop(BlockPos pos)
     {
-        List<BlockPos> list = new ArrayList<BlockPos>();
+        List<BlockPos> list = new ArrayList<>();
         for (int y = -1; y < 2; y++)
         {
             for (int z = -1; z < 2; z++)
@@ -65,7 +65,7 @@ public class MachinesUtils
 
     public static List<BlockPos> getBlocksIn3x1x3Centered(BlockPos pos)
     {
-        List<BlockPos> list = new ArrayList<BlockPos>();
+        List<BlockPos> list = new ArrayList<>();
         for (int z = -1; z < 2; z++)
         {
             for (int x = -1; x < 2; x++)
@@ -78,7 +78,7 @@ public class MachinesUtils
 
     public static List<BlockPos> getBlocksIn3x2x2Centered(BlockPos pos, EnumFacing facing)
     {
-        List<BlockPos> list = new ArrayList<BlockPos>();
+        List<BlockPos> list = new ArrayList<>();
         boolean isSided = facing == EnumFacing.EAST || facing == EnumFacing.WEST;
         boolean invert = facing == EnumFacing.NORTH || facing == EnumFacing.WEST;
         for (int y = 0; y < 2; y++)

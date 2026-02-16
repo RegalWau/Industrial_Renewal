@@ -75,21 +75,22 @@ public class BlockHandRail extends BlockHorizontalFacing
     public void addCollisionBoxToList(IBlockState state, final World worldIn, final BlockPos pos, final AxisAlignedBB entityBox, final List<AxisAlignedBB> collidingBoxes, @Nullable final Entity entityIn, final boolean isActualState)
     {
         EnumFacing face = state.getValue(FACING);
-        if (face == EnumFacing.NORTH)
-        {
-            addCollisionBoxToList(pos, entityBox, collidingBoxes, NORTH_AABB);
-        }
-        else if (face == EnumFacing.SOUTH)
-        {
-            addCollisionBoxToList(pos, entityBox, collidingBoxes, SOUTH_AABB);
-        }
-        else if (face == EnumFacing.WEST)
-        {
-            addCollisionBoxToList(pos, entityBox, collidingBoxes, WEST_AABB);
-        }
-        else if (face == EnumFacing.EAST)
-        {
-            addCollisionBoxToList(pos, entityBox, collidingBoxes, EAST_AABB);
+        if (null != face)
+        switch (face) {
+            case NORTH:
+                addCollisionBoxToList(pos, entityBox, collidingBoxes, NORTH_AABB);
+                break;
+            case SOUTH:
+                addCollisionBoxToList(pos, entityBox, collidingBoxes, SOUTH_AABB);
+                break;
+            case WEST:
+                addCollisionBoxToList(pos, entityBox, collidingBoxes, WEST_AABB);
+                break;
+            case EAST:
+                addCollisionBoxToList(pos, entityBox, collidingBoxes, EAST_AABB);
+                break;
+            default:
+                break;
         }
     }
 
@@ -105,6 +106,7 @@ public class BlockHandRail extends BlockHorizontalFacing
         return getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

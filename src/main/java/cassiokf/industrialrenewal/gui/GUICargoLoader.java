@@ -99,7 +99,7 @@ public class GUICargoLoader extends GUIBase
 
         if (isPointInRegion(7, 53, 61, 18, mouseX, mouseY))
         {
-            List<String> text = new ArrayList<String>();
+            List<String> text = new ArrayList<>();
             text.add(TextFormatting.GRAY + I18n.format("gui.industrialrenewal.button.cargoloaderbutton0") + " " + TextFormatting.DARK_GREEN + waitE);
             this.drawHoveringText(text, actualMouseX, actualMouseY);
         }

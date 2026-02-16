@@ -12,6 +12,10 @@ import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nullable;
 
+/* It seems like there is a completely
+unfinished system for the record player, one
+that allows for an autoplay feature
+*/
 public class TileEntityRecordPlayer extends TileEntitySync
 {
     public ItemStackHandler inventory;

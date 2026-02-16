@@ -33,18 +33,18 @@ public class TileEntityHVConnectorBase extends TileEntitySync
     {
         if (master == null || master.isInvalid())
         {
-            List<TileEntityHVConnectorBase> connectedCables = new ArrayList<TileEntityHVConnectorBase>();
-            Stack<TileEntityHVConnectorBase> traversingCables = new Stack<TileEntityHVConnectorBase>();
+            List<TileEntityHVConnectorBase> connectedCables = new ArrayList<>();
+            Stack<TileEntityHVConnectorBase> traversingCables = new Stack<>();
             IConnectorHV inTransformerT = null;
             IConnectorHV outTransformerT = null;
-            TileEntityHVConnectorBase master = this;
+            TileEntityHVConnectorBase currentmaster = this;
             traversingCables.add(this);
             while (!traversingCables.isEmpty())
             {
                 TileEntityHVConnectorBase storage = traversingCables.pop();
                 if (storage.isMaster())
                 {
-                    master = storage;
+                    currentmaster = storage;
                 }
                 connectedCables.add(storage);
                 if (storage.isLeftConnected())
@@ -87,12 +87,12 @@ public class TileEntityHVConnectorBase extends TileEntitySync
             }
             for (TileEntityHVConnectorBase storage : connectedCables)
             {
-                storage.setMaster(master);
+                storage.setMaster(currentmaster);
                 storage.markDirty();
             }
             if (inTransformerT != null) inTransformerT.setOtherSideTransformer(outTransformerT);
             if (outTransformerT != null) outTransformerT.setOtherSideTransformer(inTransformerT);
-            master.markDirty();
+            currentmaster.markDirty();
             markDirty();
         }
     }

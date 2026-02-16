@@ -21,6 +21,7 @@ public class EntityPassengerCar extends RotatableBase
         super(worldIn, x, y, z);
     }
 
+    @Override
     public boolean processInitialInteract(EntityPlayer player, EnumHand hand)
     {
         if (super.processInitialInteract(player, hand)) return true;

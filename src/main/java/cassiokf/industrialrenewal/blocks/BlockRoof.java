@@ -44,6 +44,7 @@ public class BlockRoof extends BlockHorizontalFacing
         setLightOpacity(255);
     }
 
+    @Override
     protected BlockStateContainer createBlockState()
     {
         IProperty[] listedProperties = new IProperty[]{FACING}; // listed properties
@@ -124,6 +125,7 @@ public class BlockRoof extends BlockHorizontalFacing
     }
 
     @Deprecated
+    @Override
     public boolean isTopSolid(IBlockState state)
     {
         return true;

@@ -61,7 +61,7 @@ public class GUILatheMachine extends GUIBase
 
         if (isPointInRegion(7, 9, 17, 69, mouseX, mouseY))
         {
-            List<String> text = new ArrayList<String>();
+            List<String> text = new ArrayList<>();
             IEnergyStorage energyStorage = te.getEnergyStorage();
             text.add(TextFormatting.GRAY + "" + energyStorage.getEnergyStored() + " / " + energyStorage.getMaxEnergyStored());
             this.drawHoveringText(text, actualMouseX, actualMouseY);

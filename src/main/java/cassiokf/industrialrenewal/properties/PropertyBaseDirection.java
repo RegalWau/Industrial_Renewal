@@ -17,6 +17,8 @@ public class PropertyBaseDirection extends PropertyEnum<EnumBaseDirection>
 
     /**
      * Create a new PropertyDirection with the given name
+     * @param name
+     * @return 
      */
     public static PropertyBaseDirection create(String name)
     {
@@ -25,6 +27,9 @@ public class PropertyBaseDirection extends PropertyEnum<EnumBaseDirection>
 
     /**
      * Create a new PropertyDirection with all directions that match the given Predicate
+     * @param name
+     * @param filter
+     * @return 
      */
     public static PropertyBaseDirection create(String name, Predicate<EnumBaseDirection> filter)
     {
@@ -33,6 +38,9 @@ public class PropertyBaseDirection extends PropertyEnum<EnumBaseDirection>
 
     /**
      * Create a new PropertyDirection for the given direction values
+     * @param name
+     * @param values
+     * @return 
      */
     public static PropertyBaseDirection create(String name, Collection<EnumBaseDirection> values)
     {

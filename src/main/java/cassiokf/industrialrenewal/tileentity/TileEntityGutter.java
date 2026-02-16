@@ -51,7 +51,7 @@ public class TileEntityGutter extends TileEntityMultiBlocksTube<TileEntityGutter
                 }
                 if (this.tank.getFluidAmount() > 0)
                 {
-                    int quantity = getMachineContainers().size() > 0 ? (this.tank.getFluidAmount() / getMachineContainers().size()) : 0;
+                    int quantity = !getMachineContainers().isEmpty() ? (this.tank.getFluidAmount() / getMachineContainers().size()) : 0;
                     for (TileEntity tileEntity : getMachineContainers().keySet())
                     {
                         if (tileEntity != null && !tileEntity.isInvalid())

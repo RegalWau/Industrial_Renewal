@@ -34,6 +34,7 @@ public class BlockLocker extends BlockHorizontalFacing
         super(name, tab, Material.IRON);
     }
 
+    @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         if (worldIn.isRemote)
@@ -54,6 +55,7 @@ public class BlockLocker extends BlockHorizontalFacing
         return true;
     }
 
+    @Override
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
     {
         TileEntity tileentity = worldIn.getTileEntity(pos);
@@ -67,11 +69,13 @@ public class BlockLocker extends BlockHorizontalFacing
         super.breakBlock(worldIn, pos, state);
     }
 
+    @Override
     public boolean hasComparatorInputOverride(IBlockState state)
     {
         return true;
     }
 
+    @Override
     public int getComparatorInputOverride(IBlockState blockState, World worldIn, BlockPos pos)
     {
         return Container.calcRedstoneFromInventory(this.getLockableContainer(worldIn, pos));
@@ -137,6 +141,7 @@ public class BlockLocker extends BlockHorizontalFacing
         return new BlockStateContainer(this, FACING, OPEN, DOWN);
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

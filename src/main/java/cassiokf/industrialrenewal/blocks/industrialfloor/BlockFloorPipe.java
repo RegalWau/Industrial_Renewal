@@ -95,6 +95,7 @@ public class BlockFloorPipe extends BlockFluidPipe
     }
 
     @Deprecated
+    @Override
     public boolean isTopSolid(IBlockState state)
     {
         return true;

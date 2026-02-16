@@ -49,6 +49,12 @@ public abstract class TESRBase<T extends TileEntity> extends TileEntitySpecialRe
 
     /**
      * x = side / y = up / z = front
+     * @param facing
+     * @param x
+     * @param y
+     * @param z
+     * @param st
+     * @param scale
      */
     public static void renderText(EnumFacing facing, double x, double y, double z, String st, float scale)
     {
@@ -155,6 +161,13 @@ public abstract class TESRBase<T extends TileEntity> extends TileEntitySpecialRe
 
     /**
      * x = side / y = up / z = front
+     * @param facing
+     * @param x
+     * @param y
+     * @param pointer
+     * @param angle
+     * @param z
+     * @param scale
      */
     public static void renderPointer(EnumFacing facing, double x, double y, double z, float angle, ItemStack pointer, float scale)
     {

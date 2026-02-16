@@ -72,6 +72,7 @@ public class BlockCatwalkGate extends BlockHorizontalFacing
         }
     }
 
+    @Override
     public boolean isPassable(IBlockAccess worldIn, BlockPos pos)
     {
         return worldIn.getBlockState(pos).getValue(ACTIVE);
@@ -108,45 +109,47 @@ public class BlockCatwalkGate extends BlockHorizontalFacing
         if (!active)
         {
             EnumFacing face = state.getValue(FACING);
-            if (face == EnumFacing.NORTH)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, NORTH_AABB);
-            }
-            else if (face == EnumFacing.SOUTH)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, SOUTH_AABB);
-            }
-            else if (face == EnumFacing.WEST)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, WEST_AABB);
-            }
-            else if (face == EnumFacing.EAST)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, EAST_AABB);
+            if (null != face)
+            switch (face) {
+                case NORTH:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, NORTH_AABB);
+                    break;
+                case SOUTH:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, SOUTH_AABB);
+                    break;
+                case WEST:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, WEST_AABB);
+                    break;
+                case EAST:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, EAST_AABB);
+                    break;
+                default:
+                    break;
             }
         }
         else if (active)
         {
             EnumFacing face = state.getValue(FACING);
-            if (face == EnumFacing.NORTH)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, FRONT_LEFT_AABB);
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, FRONT_RIGHT_AABB);
-            }
-            else if (face == EnumFacing.SOUTH)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, BACK_LEFT_AABB);
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, BACK_RIGHT_AABB);
-            }
-            else if (face == EnumFacing.WEST)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, FRONT_LEFT_AABB);
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, BACK_LEFT_AABB);
-            }
-            else if (face == EnumFacing.EAST)
-            {
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, FRONT_RIGHT_AABB);
-                addCollisionBoxToList(pos, entityBox, collidingBoxes, BACK_RIGHT_AABB);
+            if (null != face)
+            switch (face) {
+                case NORTH:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, FRONT_LEFT_AABB);
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, FRONT_RIGHT_AABB);
+                    break;
+                case SOUTH:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, BACK_LEFT_AABB);
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, BACK_RIGHT_AABB);
+                    break;
+                case WEST:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, FRONT_LEFT_AABB);
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, BACK_LEFT_AABB);
+                    break;
+                case EAST:
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, FRONT_RIGHT_AABB);
+                    addCollisionBoxToList(pos, entityBox, collidingBoxes, BACK_RIGHT_AABB);
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -182,6 +185,7 @@ public class BlockCatwalkGate extends BlockHorizontalFacing
         return getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite()).withProperty(ACTIVE, false);
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;

@@ -2,7 +2,12 @@ package cassiokf.industrialrenewal;
 
 import cassiokf.industrialrenewal.handlers.ChunkManagerCallback;
 import cassiokf.industrialrenewal.handlers.EventHandler;
-import cassiokf.industrialrenewal.init.*;
+import cassiokf.industrialrenewal.init.EntityInit;
+import cassiokf.industrialrenewal.init.FluidInit;
+import cassiokf.industrialrenewal.init.IRSoundRegister;
+import cassiokf.industrialrenewal.init.ModBlocks;
+import cassiokf.industrialrenewal.init.ModItems;
+import cassiokf.industrialrenewal.init.NetworkHandler;
 import cassiokf.industrialrenewal.proxy.CommonProxy;
 import cassiokf.industrialrenewal.recipes.ModRecipes;
 import cassiokf.industrialrenewal.world.generation.OreGeneration;

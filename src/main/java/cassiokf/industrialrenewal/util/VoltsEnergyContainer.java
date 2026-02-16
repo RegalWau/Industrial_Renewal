@@ -51,7 +51,7 @@ public class VoltsEnergyContainer implements IEnergyStorage, INBTSerializable<NB
     }
 
     @Override
-    public void deserializeNBT(NBTTagCompound nbt)
+    public final void deserializeNBT(NBTTagCompound nbt)
     {
         if (nbt.hasKey("IRStored"))
             this.stored = nbt.getInteger("IRStored");

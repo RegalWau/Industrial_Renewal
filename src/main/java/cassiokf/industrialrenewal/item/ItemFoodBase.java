@@ -26,7 +26,7 @@ public class ItemFoodBase extends ItemFood
     }
 
     @Override
-    public ItemFoodBase setCreativeTab(CreativeTabs tab)
+    public final ItemFoodBase setCreativeTab(CreativeTabs tab)
     {
         super.setCreativeTab(tab);
         return this;

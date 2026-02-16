@@ -14,7 +14,7 @@ public class IRConfig
 {
     public static Map<String, Integer> getFuelHash()
     {
-        Map<String, Integer> fluidFuel = new HashMap<String, Integer>();
+        Map<String, Integer> fluidFuel = new HashMap<>();
         fluidFuel.put("lava", 200);
         fluidFuel.put("rocket_fuel", 3200);
         fluidFuel.put("pyrotheum", 3200);

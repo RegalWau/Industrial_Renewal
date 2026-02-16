@@ -2,7 +2,14 @@ package cassiokf.industrialrenewal.init;
 
 import cassiokf.industrialrenewal.IndustrialRenewal;
 import cassiokf.industrialrenewal.References;
-import cassiokf.industrialrenewal.entity.*;
+import cassiokf.industrialrenewal.entity.EntityCargoContainer;
+import cassiokf.industrialrenewal.entity.EntityFlatCart;
+import cassiokf.industrialrenewal.entity.EntityFluidContainer;
+import cassiokf.industrialrenewal.entity.EntityHopperCart;
+import cassiokf.industrialrenewal.entity.EntityLogCart;
+import cassiokf.industrialrenewal.entity.EntityPassengerCar;
+import cassiokf.industrialrenewal.entity.EntitySteamLocomotive;
+import cassiokf.industrialrenewal.entity.EntityTenderBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;

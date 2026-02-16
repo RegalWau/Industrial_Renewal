@@ -29,7 +29,7 @@ import java.util.List;
 
 public class BlockFluidPipeGauge extends BlockFluidPipe
 {
-    public static final PropertyDirection FACING = BlockHorizontal.FACING;
+    public static final PropertyDirection currentFACING = BlockHorizontal.FACING;
 
     public BlockFluidPipeGauge(String name, CreativeTabs tab)
     {
@@ -39,7 +39,7 @@ public class BlockFluidPipeGauge extends BlockFluidPipe
     @Override
     protected BlockStateContainer createBlockState()
     {
-        IProperty[] listedProperties = new IProperty[]{FACING}; // listed properties
+        IProperty[] listedProperties = new IProperty[]{currentFACING}; // listed properties
         IUnlistedProperty[] unlistedProperties = new IUnlistedProperty[]{MASTER, SOUTH, NORTH, EAST, WEST, UP, DOWN, CSOUTH, CNORTH, CEAST, CWEST, CUP, CDOWN};
         return new ExtendedBlockState(this, listedProperties, unlistedProperties);
     }
@@ -49,7 +49,7 @@ public class BlockFluidPipeGauge extends BlockFluidPipe
     {
         if (state instanceof IExtendedBlockState)
         {
-            EnumFacing facing = state.getValue(FACING);
+            EnumFacing facing = state.getValue(currentFACING);
             IExtendedBlockState eState = (IExtendedBlockState) state;
             return eState.withProperty(MASTER, isMaster(world, pos))
                     .withProperty(SOUTH, canConnectToPipe(world, pos, facing.getOpposite())).withProperty(NORTH, canConnectToPipe(world, pos, facing))
@@ -112,13 +112,13 @@ public class BlockFluidPipeGauge extends BlockFluidPipe
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        return getDefaultState().withProperty(FACING, EnumFacing.byHorizontalIndex(meta));
+        return getDefaultState().withProperty(currentFACING, EnumFacing.byHorizontalIndex(meta));
     }
 
     @Override
     public int getMetaFromState(IBlockState state)
     {
-        return state.getValue(FACING).getHorizontalIndex();
+        return state.getValue(currentFACING).getHorizontalIndex();
     }
 
     @Nullable
