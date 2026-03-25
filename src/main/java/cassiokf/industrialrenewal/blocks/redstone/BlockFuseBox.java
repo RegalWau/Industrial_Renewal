@@ -53,10 +53,11 @@ public class BlockFuseBox extends BlockTileEntity<TileEntityFuseBox>
             return true;
         }
         TileEntityFuseBox te = (TileEntityFuseBox) world.getTileEntity(pos);
-        if (player.isSneaking())
+        if (te != null && player.isSneaking())
         {
             te.changeActivate();
             return true;
+        } else {
         }
         OpenGUI(world, pos, player);
         return true;

@@ -123,6 +123,7 @@ public class BlockAlarm extends BlockTileEntity<TileEntityAlarm>
         return new TileEntityAlarm();
     }
 
+    @Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return face == state.getValue(FACING).getOpposite() ? BlockFaceShape.SOLID : BlockFaceShape.UNDEFINED;
