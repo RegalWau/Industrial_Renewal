@@ -4,5 +4,4 @@
 - Backport conveyors from 1.20.1 version
 - Implement unused conveyor inserters and hoppers
 - Replace sfx with "nicer" ones (maybe)
-- Port mod to 1.21.1, the 1.20.1 version is such a mess I don't want to really touch it
 - HEI + Crafttweaker compat fix
